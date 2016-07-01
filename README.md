@@ -1,2 +1,2 @@
 # auto_id
-Unique ID
+Unique ID (format rapi) yang ingin di tampilkan sesuai keinginan
