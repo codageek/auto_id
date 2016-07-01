@@ -1,0 +1,21 @@
+<?php
+  $cek=mysql_fetch_array(mysql_query("SELECT kode_id FROM `tb_kode` where tanggal='".date('Y-m-d')."' ORDER BY kode_id DESC LIMIT 1"));
+	$cekQ=$cek['kode_id'];
+	$awalQ=substr($cekQ,-4);
+	$next=$awalQ+1;
+	$jnim=strlen($next);
+	 
+	if(!$cek['kode_id'])
+	{ $no='000'; }
+	elseif($jnim==1)
+	{ $no='000'; }
+	elseif($jnim==2)
+	{ $no='00'; }
+	elseif($jnim==3)
+	{ $no='0'; }
+	elseif($jnim==4)
+	{ $no=''; }
+	
+	$nimbr=$no.$next; //untuk penomoran yang ingin diulangi tiap harinya
+	$nimbr2=date('md').$no.$next; //untuk penomoran yang TIDAK ingin diulangi tiap harinya
+?>
